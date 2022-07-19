@@ -1,0 +1,19 @@
+<p>test works!</p>
+<div>
+    <p>Belepo 1</p>
+    <button type="button" (click)="play('b1')" [disabled]="currentlyPlaying==='b1'">{{ 'AUDIO.PLAY' | translate }}</button>
+    <button type="button" (click)="pause()" *ngIf="currentlyPlaying==='b1'">{{resumeOrPause}}</button>
+    <button type="button" (click)="stop()" *ngIf="currentlyPlaying?.length && currentlyPlaying==='b1'">Stop</button>
+</div>
+<div>
+    <p>Belepo 2</p>
+    <button type="button" (click)="play('b2')" [disabled]="currentlyPlaying==='b2'">{{ 'AUDIO.PLAY' | translate }}</button>
+    <button type="button" (click)="pause()" *ngIf="currentlyPlaying==='b2'">{{resumeOrPause}}</button>
+    <button type="button" (click)="stop()" *ngIf="currentlyPlaying?.length && currentlyPlaying==='b2'">Stop</button>
+</div>
+<div>
+    <p>Belepo 3</p>
+    <button type="button" (click)="play('b3')" [disabled]="currentlyPlaying==='b3'">{{ 'AUDIO.PLAY' | translate }}</button>
+    <button type="button" (click)="pause()" *ngIf="currentlyPlaying==='b3'">{{resumeOrPause}}</button>
+    <button type="button" (click)="stop()" *ngIf="currentlyPlaying?.length && currentlyPlaying==='b3'">Stop</button>
+</div>
