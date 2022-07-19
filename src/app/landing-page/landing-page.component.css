@@ -1,0 +1,30 @@
+main {
+    background: rgb(181,115,101);
+    background: linear-gradient(180deg, rgba(181,115,101,1) 0%, rgba(132,48,60,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button {
+    background-color: transparent;
+    border: transparent;
+    font-size: 7vw;
+    display: block;
+    color: #FEFEFE;
+    padding: 6vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    display: block;
+    margin-bottom: 1.2vh;
+}
