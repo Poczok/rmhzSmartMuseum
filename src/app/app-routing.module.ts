@@ -5,7 +5,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
-  {path: '', component: MainMenuComponent},
+  {path: '', component: TestComponent},
   {path: 'list', component: TestComponent},
 
 ];

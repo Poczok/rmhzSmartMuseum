@@ -1,0 +1,95 @@
+section {
+    display: block;
+}
+
+/* Room header */
+#room-header {
+    background-color: #E2C9BB;
+}
+
+#room-header img {
+    width: 100%;
+    display: block;
+}
+
+#room-header div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+h1 {
+    margin-block: 0;
+    background-color: #E2C9BB;
+    display: inline-block;
+    font-size: 2rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+}
+
+#room-header button {
+    background-color: transparent;
+    border: none;
+}
+
+#close-button {
+    width: 2.2rem;
+}
+
+
+/* Playlist */
+#playlist {
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: #F8F1EB;
+}
+
+#playlist div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #222222;
+}
+
+#playlist p {
+    font-size: 1.2rem;
+}
+
+.main-play-button {
+    border-radius: 2rem;
+    padding: 10px 1rem;
+    font-size: 14pt;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #84303C;
+    border: none;
+    color: #ffffff;
+}
+
+
+/* Next room */
+#next-room {
+    background-color: #E2C9BB;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+p {
+    margin-block: 0;
+    display: inline-block;
+}
+
+#next-room-button {
+    display: inline-block;
+    border: 1px solid #222222;
+    border-radius: 2rem;
+    background-color: transparent;
+    padding: 10px 1rem;
+    font-size: 14pt;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 18px;
+}

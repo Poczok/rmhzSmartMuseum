@@ -7,24 +7,26 @@ main {
 }
 
 div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    padding-top: 22vh;
+    display: flex;
+    flex-direction: column;
 }
 
 button {
     background-color: transparent;
     border: transparent;
-    font-size: 7vw;
+    font-size: 24px;
     display: block;
-    color: #FEFEFE;
-    padding: 6vh;
+    color: #FFFFFF;
     font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+button:first-of-type {
+    padding-bottom: 12vh;
 }
 
 img {
     display: block;
-    margin-bottom: 1.2vh;
+    margin: 0 auto 1.2vh auto;
 }

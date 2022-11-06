@@ -17,3 +17,23 @@
     <button type="button" (click)="pause()" *ngIf="currentlyPlaying==='b3'">{{resumeOrPause}}</button>
     <button type="button" (click)="stop()" *ngIf="currentlyPlaying?.length && currentlyPlaying==='b3'">Stop</button>
 </div>
+
+<main>
+    <section id="room-header">
+        <img src="../../assets/img/madar.jpg">
+        <div>
+            <h1>Belepo 1-10</h1>
+            <button id="close-button"><img src="../../assets/img/close-icon.svg"></button>
+        </div>
+    </section>
+    <section id="playlist">
+        <div>
+            <p>Elso elem</p>
+            <button class="main-play-button">Lejatszas</button>
+        </div>
+    </section>
+    <section id="next-room">
+        <p>Következő helység:</p>
+        <button id="next-room-button">Folyoso</button>
+    </section>
+</main>
