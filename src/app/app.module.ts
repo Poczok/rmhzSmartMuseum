@@ -9,6 +9,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -19,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     TestComponent,
     LandingPageComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,

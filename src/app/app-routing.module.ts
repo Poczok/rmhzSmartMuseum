@@ -3,15 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { TestComponent } from './test/test.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 const routes: Routes = [
-  {path: '', component: TestComponent},
-  {path: 'list', component: TestComponent},
+    { path: '', component: LandingPageComponent },
+    { path: 'list', component: TestComponent },
+    { path: 'welcome', component: WelcomePageComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
