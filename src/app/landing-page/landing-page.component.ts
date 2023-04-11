@@ -17,7 +17,6 @@ export class LandingPageComponent implements OnInit {
 
   public setLanguage(language: string) {
     this.translate.use(language);
-    console.log('navv');
     this.router.navigate(['/welcome']);
   }
 }

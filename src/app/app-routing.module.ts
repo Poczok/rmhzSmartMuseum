@@ -8,7 +8,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 const routes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'list', component: TestComponent },
-    { path: 'welcome', component: WelcomePageComponent }
+    { path: 'welcome', component: WelcomePageComponent },
+    { path: 'main', component: MainMenuComponent },
+    { path: 'detail/:roomId/:fileAmount', component: TestComponent }
 
 ];
 
