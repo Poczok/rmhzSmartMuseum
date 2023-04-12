@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { ExitPageComponent } from './exit-page/exit-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -21,7 +22,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TestComponent,
     LandingPageComponent,
     MainMenuComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    ExitPageComponent
   ],
   imports: [
     BrowserModule,

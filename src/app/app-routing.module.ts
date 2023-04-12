@@ -4,13 +4,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { TestComponent } from './test/test.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { ExitPageComponent } from './exit-page/exit-page.component';
 
 const routes: Routes = [
     { path: '', component: LandingPageComponent },
     { path: 'list', component: TestComponent },
     { path: 'welcome', component: WelcomePageComponent },
     { path: 'main', component: MainMenuComponent },
-    { path: 'detail/:roomId/:fileAmount', component: TestComponent }
+    { path: 'detail/:roomId', component: TestComponent },
+    { path: 'end', component: ExitPageComponent }
 
 ];
 

@@ -1,63 +1,63 @@
 <main>
-    <header id="rooms-logo">
-        <img src="../../assets/img/logo-hu.svg" alt="Régi Mesterségek Háza logója / logo Kuće Starih Zanata">
+    <header id="rooms-logo" (click)="navigateToLanding()">
+        <img [src]="returnUrlBasedOnLanguage()" alt="Régi Mesterségek Háza logója / logo Kuće Starih Zanata">
     </header>
     <section>
         <div class="card" (click)="navigateForward(1)">
             <img src="../../assets/img/room-1.jpg" alt="Első helyiség / Prva soba">
-            <h3>1. helyiség</h3>
+            <h3>1. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
         <div class="card" (click)="navigateForward(2)">
             <img src="../../assets/img/room-2.jpg" alt="Második helyiség / Druga soba">
-            <h3>2. helyiség</h3>
+            <h3>2. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(3)">
             <img src="../../assets/img/room-3.jpg" alt="Harmadik helyiség / Treća soba">
-            <h3>3. helyiség</h3>
+            <h3>3. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(4)">
             <img src="../../assets/img/room-4.jpg" alt="Negyedik helyiség / Četvrta soba">
-            <h3>4. helyiség</h3>
+            <h3>4. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(5)">
             <img src="../../assets/img/room-5.jpg" alt="Ötödik helyiség / Peta soba">
-            <h3>5. helyiség</h3>
+            <h3>5. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(6)">
             <img src="../../assets/img/room-6.jpg" alt="Hatodik helyiség / Šesta soba">
-            <h3>6. helyiség</h3>
+            <h3>6. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(7)">
             <img src="../../assets/img/room-7.jpg" alt="Hetedik helyiség / Sedma soba">
-            <h3>7. helyiség</h3>
+            <h3>7. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(8)">
             <img src="../../assets/img/room-8.jpg" alt="Nyolcadik helyiség / Osma soba">
-            <h3>8. helyiség</h3>
+            <h3>8. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(9)">
             <img src="../../assets/img/room-9.jpg" alt="Kilencedik helyiség / Deveta soba">
-            <h3>9. helyiség</h3>
+            <h3>9. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(10)">
             <img src="../../assets/img/room-10.jpg" alt="Tizedik helyiség / Deseta soba">
-            <h3>10. helyiség</h3>
+            <h3>10. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(11)">
             <img src="../../assets/img/room-11.jpg" alt="Tizenegyedik helyiség / Jedanaesta soba">
-            <h3>11. helyiség</h3>
+            <h3>11. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(12)">
             <img src="../../assets/img/room-12.jpg" alt="Tizenkettedik helyiség / Dvanaesta soba">
-            <h3>12. helyiség</h3>
+            <h3>12. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(13)">
             <img src="../../assets/img/room-13.jpg" alt="Tizenharmadik helyiség / Trinaesta soba">
-            <h3>13. helyiség</h3>
+            <h3>13. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
-        <div class="card" (click)="navigateForward(1)">
+        <div class="card" (click)="navigateForward(14)">
             <img src="../../assets/img/room-14.jpg" alt="Tizennegyedik helyiség / Četrnaesta soba">
-            <h3>14. helyiség</h3>
+            <h3>14. {{ 'MAIN.ROOM' | translate }}</h3>
         </div>
     </section>
 </main>

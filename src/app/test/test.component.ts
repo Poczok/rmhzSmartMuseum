@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { InfoService } from '../info.service';
 
 @Component({
     selector: 'app-test',
@@ -11,7 +12,6 @@ export class TestComponent implements OnInit {
 
     audio = new Audio();
     audiostatus = false;
-    resumeOrPause = 'Pause';
     currentlyPlaying = 0;
     activeRoute: any;
     activeRoute2: any;
@@ -19,17 +19,20 @@ export class TestComponent implements OnInit {
     view = false;
     newArray: Array<number> = [];
 
-    constructor(public translate: TranslateService, public router: Router, private activatedRoute: ActivatedRoute) { }
+    constructor(public translate: TranslateService, public router: Router, private activatedRoute: ActivatedRoute, private infoService: InfoService) { }
 
     ngOnInit(): void {
-        this.translate.use('hu');
+
+        if (this.translate.currentLang == undefined) {
+            this.translate.use('hu');
+        }
         this.activeRoute = this.activatedRoute.snapshot.paramMap.get('roomId');
 
         this.activeRoute2 = this.activatedRoute.snapshot.paramMap.get('fileAmount');
         this.activatedRoute.paramMap
             .subscribe((params: ParamMap) => {
                 this.activeRoute = params.get('roomId');
-                this.activeRoute2 = params.get('fileAmount');
+                this.activeRoute2 = this.infoService.returnRoomSize(this.activeRoute);
                 this.view = true;
                 for (let i = 0; i < this.activeRoute2; i++) {
                     this.newArray.push(i + 1);
@@ -39,7 +42,7 @@ export class TestComponent implements OnInit {
 
     public play(fileName: number) {
 
-        this.audio.src = "../../assets/" + fileName + ".wav";
+        this.audio.src = "../../assets/" + this.activeRoute + "-" + fileName + "-" + this.translate.currentLang + ".wav";
         this.currentlyPlaying = fileName;
         this.audio.load()
         this.audio.play()
@@ -48,12 +51,10 @@ export class TestComponent implements OnInit {
 
     public pause() {
         this.audio.paused ? this.audio.play() : this.audio.pause();
-        this.audio.paused ? this.resumeOrPause = 'Resume' : this.resumeOrPause = 'Pause';
     }
 
     public stop() {
         this.currentlyPlaying = 0;
-        this.resumeOrPause = 'Pause';
         this.audio.pause();
     }
 
@@ -64,5 +65,20 @@ export class TestComponent implements OnInit {
     public numSequence(n: number): Array<number> {
         console.log("hello")
         return Array(n);
+    }
+
+    public returnUrlForPicture() {
+        return "../../assets/img/room-" + this.activeRoute + ".jpg"
+    }
+
+    public navigateToNextRoom() {
+        console.log(this.activeRoute)
+        console.log(this.activeRoute2)
+        this.newArray = [];
+        this.router.navigate(['/detail/' + (+this.activeRoute + 1)]);
+    }
+
+    public navigateToExitPage() {
+        this.router.navigate(['/end']);
     }
 }
