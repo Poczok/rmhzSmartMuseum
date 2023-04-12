@@ -30,6 +30,11 @@ h1 {
     font-weight: 700;
 }
 
+#room-header h1 span {
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
 #room-header button {
     background-color: transparent;
     border: none;
@@ -45,11 +50,7 @@ h1 {
     background-color: #fff;
 }
 
-#playlist div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+#playlist>div {
     border-bottom: 1px solid #ECEAE8;
 }
 
@@ -57,7 +58,14 @@ h1 {
     border-bottom: none;
 }
 
-#playlist p {
+#things-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#things-list-item p {
     font-size: 1.2rem;
 }
 
@@ -71,6 +79,23 @@ h1 {
     cursor: pointer;
 }
 
+/* Audio buttons */
+#audio-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3rem 0 4rem 0;
+}
+
+#audio-buttons button {
+    background: none;
+    border: none;
+}
+
+#audio-buttons img {
+    width: 3rem;
+    height: 3rem;
+}
 
 /* Next room */
 #next-room {
@@ -86,6 +111,7 @@ p {
     margin-block: 0;
     display: inline-block;
     font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 #next-room-button {
