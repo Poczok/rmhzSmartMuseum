@@ -1,0 +1,19 @@
+#rooms-logo {
+    background-color: #ECEAE8;
+    height: 10rem;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#rooms-logo img {
+    width: 14rem;
+}
+
+main {
+    background-color: #fff;
+    padding: 3rem 1.5rem;
+}

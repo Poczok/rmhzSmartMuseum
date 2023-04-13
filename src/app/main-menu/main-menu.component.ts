@@ -28,4 +28,8 @@ export class MainMenuComponent implements OnInit {
     returnUrlBasedOnLanguage() {
         return "../../assets/img/logo-" + (this.translate.currentLang ? this.translate.currentLang : 'hu') + ".svg"
     }
+
+    navigateToExit() {
+        this.router.navigate(['/end']);
+    }
 }

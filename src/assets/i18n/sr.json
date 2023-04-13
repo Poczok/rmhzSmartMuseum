@@ -1,5 +1,23 @@
 {
     "AUDIO": {
       "PLAY": "Igraj"
+    },
+    "WELCOME": {
+        "TITLE": "Dobrodošli u Kući Starih Zanata!"
+    },
+    "MAIN": {
+        "ROOM": "prostorija"
+    },
+    "DETAIL": {
+        "ITEM": "predmet",
+        "STEPOVER": "Uđite u sledeću prostoriju!",
+        "NEXT": "Sledeći",
+        "END": "Izađi"
+    },
+    "EXIT": {
+        "REVIEW": "Pre odlaska napišite svoje mišljenje na našoj Fejsbuk ili Gugl stranici klikom na jedno od dugmadi ispod!!",
+        "FACEBOOK": "Pišem Fejsbuk recenziju",
+        "GOOGLE": "Pišem Google recenziju",
+        "TITLE": "Hvala vam na poseti! Radujemo se vašem povratku!"
     }
 }

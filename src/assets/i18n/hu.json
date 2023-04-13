@@ -1,5 +1,23 @@
 {
     "AUDIO": {
       "PLAY": "Lejátszás"
+    },
+    "WELCOME": {
+        "TITLE": "Üdvözlünk a Régi Mesterségek Házában!"
+    },
+    "MAIN": {
+        "ROOM": "helyiség"
+    },
+    "DETAIL": {
+        "ITEM": "tárgy",
+        "STEPOVER": "Lépj be a következő helyiségbe!",
+        "NEXT": "Tovább",
+        "END": "Kilépés"
+    },
+    "EXIT": {
+        "REVIEW": "Mielőtt kilépnél, kérlek írd le a véleményed Facebook vagy Google  oldalunkon az alábbi gombok egyikére kattintva!",
+        "FACEBOOK": "Facebook véleményt írok",
+        "GOOGLE": "Google véleményt írok",
+        "TITLE": "Köszönjük látogatásod! Várunk vissza szeretettel!"
     }
 }
