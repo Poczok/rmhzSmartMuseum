@@ -15,5 +15,63 @@
 
 main {
     background-color: #fff;
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
+}
+
+section>p {
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
+}
+
+#facebook,
+#google {
+    border: 1px solid #CF9764;
+    background: #CF9764;
+    margin: 1rem 0;
+}
+
+#facebook div,
+#google div {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.5rem;
+}
+
+#facebook-icon,
+#google-icon {
+    width: 12%;
+    text-align: center;
+    background: #fff;
+}
+
+#facebook-icon img,
+#google-icon img {
+    width: 1.2rem;
+}
+
+#facebook-text p,
+#google-text p {
+    padding-left: 0.6rem;
+    color: #fff;
+}
+
+#goodbye {
+    text-align: center;
+}
+
+#goodbye>h2 {
+    margin-top: 4rem;
+    margin-bottom: 2.8rem;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 2.6rem;
+}
+
+#goodbye img {
+    width: 16rem;
+    border: 0.3rem solid #6D0612;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
 }

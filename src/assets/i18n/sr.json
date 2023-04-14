@@ -15,8 +15,8 @@
         "END": "Izađi"
     },
     "EXIT": {
-        "REVIEW": "Pre odlaska napišite svoje mišljenje na našoj Fejsbuk ili Gugl stranici klikom na jedno od dugmadi ispod!!",
-        "FACEBOOK": "Pišem Fejsbuk recenziju",
+        "REVIEW": "Pre odlaska napišite svoje mišljenje na našoj Facebook ili Google stranici klikom na jedno od dugmadi ispod!",
+        "FACEBOOK": "Pišem Facebook recenziju",
         "GOOGLE": "Pišem Google recenziju",
         "TITLE": "Hvala vam na poseti! Radujemo se vašem povratku!"
     }
