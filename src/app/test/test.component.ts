@@ -41,7 +41,6 @@ export class TestComponent implements OnInit {
     }
 
     public play(fileName: number) {
-
         this.audio.src = "../../assets/" + this.activeRoute + "-" + fileName + "-" + this.translate.currentLang + ".mp3";
         this.currentlyPlaying = fileName;
         this.audio.load()

@@ -10,7 +10,6 @@ export class InfoService {
     constructor() { }
 
     public returnRoomSize(roomNumber: number) {
-        console.log(roomNumber + " www" + this.room1[roomNumber])
         return this.room1[roomNumber - 1];
     }
 }

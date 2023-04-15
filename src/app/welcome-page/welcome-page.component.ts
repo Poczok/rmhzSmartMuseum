@@ -9,20 +9,26 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class WelcomePageComponent implements OnInit {
 
+    welcomeAudio = new Audio();
+
     constructor(public router: Router, private translate: TranslateService) { }
 
     ngOnInit(): void {
         if (this.translate.currentLang == undefined) {
             this.translate.use('hu');
         }
+        this.welcomeAudio.src= "../../assets/0-0-" + this.translate.currentLang + ".mp3";
+        this.welcomeAudio.play();
     }
 
     navigateForward() {
         this.router.navigate(['/main']);
+        this.welcomeAudio.pause()
     }
 
     navigateToLanding() {
         this.router.navigate(['/']);
+        this.welcomeAudio.pause()
     }
 
     returnUrlBasedOnLanguage() {
