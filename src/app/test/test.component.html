@@ -10,11 +10,11 @@
         <div *ngFor="let item of newArray">
             <div id="things-list-item">
                 <p>{{item}}. {{ 'DETAIL.ITEM' | translate }}</p>
-                <button class="main-play-button" (click)="play(item)">{{ 'AUDIO.PLAY' | translate }}</button>
+                <button class="main-play-button" (click)="play(item)" *ngIf="currentlyPlaying !== item">{{ 'AUDIO.PLAY' | translate }}</button>
             </div>
             <div id="audio-buttons" *ngIf="currentlyPlaying===item">
-                <button type="button" *ngIf="currentlyPlaying===item"><img src="../../assets/img/play-icon.svg" alt="Lejátszás ikon"></button>
-                <button type="button" (click)="pause()" *ngIf="currentlyPlaying===item"><img src="../../assets/img/pause-icon.svg" alt="Szüneteltetés ikon"></button>
+                <button type="button" *ngIf="currentlyPlaying===item" (click)="resume()"><img src="../../assets/img/play-icon.svg" alt="Lejátszás ikon" [ngClass]="{'inactive': !audio.paused}"></button>
+                <button type="button" (click)="pause()" *ngIf="currentlyPlaying===item"><img src="../../assets/img/pause-icon.svg" alt="Szüneteltetés ikon" [ngClass]="{'inactive': audio.paused}"></button>
                 <button type="button" (click)="stop()" *ngIf="currentlyPlaying != 0 && currentlyPlaying===item"><img src="../../assets/img/stop-icon.svg" alt="Megállítás ikon"></button>
             </div>
         </div>

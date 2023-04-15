@@ -124,3 +124,7 @@ p {
     font-family: 'Open Sans', sans-serif;
     line-height: 1rem;
 }
+
+.inactive {
+    opacity: 0.3;
+}

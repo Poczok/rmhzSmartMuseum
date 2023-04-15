@@ -42,7 +42,7 @@ export class TestComponent implements OnInit {
 
     public play(fileName: number) {
 
-        this.audio.src = "../../assets/" + this.activeRoute + "-" + fileName + "-" + this.translate.currentLang + ".wav";
+        this.audio.src = "../../assets/" + this.activeRoute + "-" + fileName + "-" + this.translate.currentLang + ".mp3";
         this.currentlyPlaying = fileName;
         this.audio.load()
         this.audio.play()
@@ -50,7 +50,13 @@ export class TestComponent implements OnInit {
     }
 
     public pause() {
-        this.audio.paused ? this.audio.play() : this.audio.pause();
+        if (!this.audio.paused) {
+            this.audio.paused ? this.audio.play() : this.audio.pause();
+        }
+    }
+
+    public resume() {
+        this.audio.paused ? this.audio.play() : null;
     }
 
     public stop() {
@@ -59,6 +65,7 @@ export class TestComponent implements OnInit {
     }
 
     public goBack() {
+        this.audio.pause();
         this.router.navigate(['/main'])
     }
 
@@ -81,4 +88,5 @@ export class TestComponent implements OnInit {
     public navigateToExitPage() {
         this.router.navigate(['/end']);
     }
+
 }

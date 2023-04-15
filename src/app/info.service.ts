@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class InfoService {
 
-    room1 = [3, 4, 7, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+    room1 = [9, 4, 7, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
 
     constructor() { }
 
