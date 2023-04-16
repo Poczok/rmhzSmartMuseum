@@ -13,7 +13,8 @@ const routes: Routes = [
     { path: 'main', component: MainMenuComponent },
     { path: 'detail/:roomId', component: TestComponent },
     { path: 'end', component: ExitPageComponent },
-    { path: '**', component: LandingPageComponent }
+    { path: '**', component: LandingPageComponent },
+    { path: 'detail/**', component: TestComponent }
 
 ];
 
