@@ -12,10 +12,7 @@ const routes: Routes = [
     { path: 'welcome', component: WelcomePageComponent },
     { path: 'main', component: MainMenuComponent },
     { path: 'detail/:roomId', component: TestComponent },
-    { path: 'end', component: ExitPageComponent },
-    { path: '**', component: LandingPageComponent },
-    { path: 'detail/**', component: TestComponent }
-
+    { path: 'end', component: ExitPageComponent }
 ];
 
 @NgModule({

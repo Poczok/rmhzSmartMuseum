@@ -23,6 +23,15 @@
     color: #fff;
 }
 
+#welcome-page h3 {
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 3.6rem;
+    color: #fff;
+}
+
 #logo-short {
     width: 10rem;
     display: block;
