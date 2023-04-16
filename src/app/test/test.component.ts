@@ -78,8 +78,11 @@ export class TestComponent implements OnInit {
     }
 
     public navigateToNextRoom() {
-        console.log(this.activeRoute)
-        console.log(this.activeRoute2)
+        window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+        });
         this.newArray = [];
         this.router.navigate(['/detail/' + (+this.activeRoute + 1)]);
     }
