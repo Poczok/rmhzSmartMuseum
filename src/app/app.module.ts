@@ -11,6 +11,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ExitPageComponent } from './exit-page/exit-page.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,7 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
   }),
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
