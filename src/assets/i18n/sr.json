@@ -3,7 +3,8 @@
       "PLAY": "Igraj"
     },
     "WELCOME": {
-        "TITLE": "Dobrodošli u Kući Starih Zanata!"
+        "TITLE": "Dobrodošli u Kući Starih Zanata!",
+        "START": "Kliknite ovde da biste započeli"
     },
     "MAIN": {
         "ROOM": "prostorija"

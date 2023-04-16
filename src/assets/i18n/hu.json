@@ -3,7 +3,8 @@
       "PLAY": "Lejátszás"
     },
     "WELCOME": {
-        "TITLE": "Üdvözlünk a Régi Mesterségek Házában!"
+        "TITLE": "Üdvözlünk a Régi Mesterségek Házában!",
+        "START": "Kattintson ide a kezdéshez"
     },
     "MAIN": {
         "ROOM": "helyiség"
