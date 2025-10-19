@@ -6,7 +6,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { TestComponent } from './test/test.component';
+import { RoomDetailComponent } from './room-detail/room-detail.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ExitPageComponent } from './exit-page/exit-page.component';
 
@@ -16,10 +16,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const routes = [
     { path: '', component: LandingPageComponent },
-    { path: 'list', component: TestComponent },
+    { path: 'list', component: RoomDetailComponent },
     { path: 'welcome', component: WelcomePageComponent },
     { path: 'main', component: MainMenuComponent },
-    { path: 'detail/:roomId', component: TestComponent },
+    { path: 'detail/:roomId', component: RoomDetailComponent },
     { path: 'end', component: ExitPageComponent }
 ];
 

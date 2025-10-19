@@ -7,13 +7,13 @@ import { takeUntil } from 'rxjs/operators';
 import { InfoService } from '../info.service';
 
 @Component({
-    selector: 'app-test',
-    templateUrl: './test.component.html',
-    styleUrls: ['./test.component.css'],
+    selector: 'app-room-detail',
+    templateUrl: './room-detail.component.html',
+    styleUrls: ['./room-detail.component.css'],
     standalone: true,
     imports: [TranslateModule, NgClass]
 })
-export class TestComponent implements OnInit, OnDestroy {
+export class RoomDetailComponent implements OnInit, OnDestroy {
 
     audio = new Audio();
     audiostatus = false;
