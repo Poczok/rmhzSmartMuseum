@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
@@ -9,7 +9,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
     standalone: true,
     imports: [TranslateModule]
 })
-export class WelcomePageComponent implements OnInit {
+export class WelcomePageComponent implements OnInit, OnDestroy {
 
     welcomeAudio = new Audio();
 
@@ -21,6 +21,10 @@ export class WelcomePageComponent implements OnInit {
         }
         this.welcomeAudio.src= "../../assets/0-0-" + this.translate.currentLang + ".mp3";
         this.welcomeAudio.play();
+    }
+
+    ngOnDestroy(): void {
+        this.welcomeAudio.pause();
     }
 
     navigateForward() {
