@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { NgClass } from '@angular/common';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { InfoService } from '../info.service';
 
 @Component({
     selector: 'app-test',
     templateUrl: './test.component.html',
     styleUrls: ['./test.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [TranslateModule, NgClass]
 })
-export class TestComponent implements OnInit {
+export class TestComponent implements OnInit, OnDestroy {
 
     audio = new Audio();
     audiostatus = false;
@@ -19,6 +23,7 @@ export class TestComponent implements OnInit {
     numbers: any;
     view = false;
     newArray: Array<number> = [];
+    private destroy$ = new Subject<void>();
 
     constructor(public translate: TranslateService, public router: Router, private activatedRoute: ActivatedRoute, private infoService: InfoService) { }
 
@@ -31,6 +36,7 @@ export class TestComponent implements OnInit {
 
         this.activeRoute2 = this.activatedRoute.snapshot.paramMap.get('fileAmount');
         this.activatedRoute.paramMap
+            .pipe(takeUntil(this.destroy$))
             .subscribe((params: ParamMap) => {
                 this.activeRoute = params.get('roomId');
                 this.activeRoute2 = this.infoService.returnRoomSize(this.activeRoute);
@@ -39,6 +45,11 @@ export class TestComponent implements OnInit {
                     this.newArray.push(i + 1);
                 }
             });
+    }
+
+    ngOnDestroy(): void {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 
     public play(fileName: number) {

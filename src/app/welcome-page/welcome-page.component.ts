@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-welcome-page',
     templateUrl: './welcome-page.component.html',
     styleUrls: ['./welcome-page.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [TranslateModule]
 })
 export class WelcomePageComponent implements OnInit {
 
