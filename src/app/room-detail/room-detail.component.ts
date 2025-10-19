@@ -38,9 +38,14 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
         this.activatedRoute.paramMap
             .pipe(takeUntil(this.destroy$))
             .subscribe((params: ParamMap) => {
+                // Stop audio when navigating between rooms (browser back/forward buttons)
+                this.audio.pause();
+                this.currentlyPlaying = 0;
+
                 this.activeRoute = params.get('roomId');
                 this.activeRoute2 = this.infoService.returnRoomSize(this.activeRoute);
                 this.view = true;
+                this.newArray = [];
                 for (let i = 0; i < this.activeRoute2; i++) {
                     this.newArray.push(i + 1);
                 }
@@ -48,6 +53,8 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
+        this.audio.pause();
+        this.currentlyPlaying = 0;
         this.destroy$.next();
         this.destroy$.complete();
     }
@@ -90,16 +97,20 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     }
 
     public navigateToNextRoom() {
-        window.scroll({ 
-            top: 0, 
-            left: 0, 
-            behavior: 'smooth' 
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
         });
         this.newArray = [];
+        this.audio.pause();
+        this.currentlyPlaying = 0;
         this.router.navigate(['/detail/' + (+this.activeRoute + 1)]);
     }
 
     public navigateToExitPage() {
+        this.audio.pause();
+        this.currentlyPlaying = 0;
         this.router.navigate(['/end']);
     }
 
