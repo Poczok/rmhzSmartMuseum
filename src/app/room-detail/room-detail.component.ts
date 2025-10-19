@@ -25,6 +25,11 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     newArray: Array<number> = [];
     private destroy$ = new Subject<void>();
 
+    // Audio progress bar properties
+    currentTime = 0;
+    duration = 0;
+    progressPercentage = 0;
+
     constructor(public translate: TranslateService, public router: Router, private activatedRoute: ActivatedRoute, private infoService: InfoService) { }
 
     ngOnInit(): void {
@@ -50,6 +55,10 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
                     this.newArray.push(i + 1);
                 }
             });
+
+        // Set up audio event listeners for progress tracking
+        this.audio.addEventListener('timeupdate', () => this.updateProgress());
+        this.audio.addEventListener('loadedmetadata', () => this.onAudioLoaded());
     }
 
     ngOnDestroy(): void {
@@ -88,12 +97,37 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     }
 
     public numSequence(n: number): Array<number> {
-        console.log("hello")
         return Array(n);
     }
 
     public returnUrlForPicture() {
         return "../../assets/img/room-" + this.activeRoute + ".jpg"
+    }
+
+    private updateProgress() {
+        this.currentTime = this.audio.currentTime;
+        if (this.duration > 0) {
+            this.progressPercentage = (this.currentTime / this.duration) * 100;
+        }
+    }
+
+    private onAudioLoaded() {
+        this.duration = this.audio.duration;
+    }
+
+    public seek(event: MouseEvent) {
+        const progressBar = event.currentTarget as HTMLElement;
+        const clickPosition = event.offsetX;
+        const barWidth = progressBar.offsetWidth;
+        const seekPercentage = clickPosition / barWidth;
+        this.audio.currentTime = seekPercentage * this.duration;
+    }
+
+    public formatTime(seconds: number): string {
+        if (isNaN(seconds)) return '0:00';
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 
     public navigateToNextRoom() {
