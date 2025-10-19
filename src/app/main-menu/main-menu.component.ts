@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
     selector: 'app-main-menu',
     templateUrl: './main-menu.component.html',
-    styleUrls: ['./main-menu.component.css']
+    styleUrls: ['./main-menu.component.css'],
+    standalone: false
 })
 export class MainMenuComponent implements OnInit {
 

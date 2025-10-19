@@ -6,7 +6,8 @@ import { InfoService } from '../info.service';
 @Component({
     selector: 'app-test',
     templateUrl: './test.component.html',
-    styleUrls: ['./test.component.css']
+    styleUrls: ['./test.component.css'],
+    standalone: false
 })
 export class TestComponent implements OnInit {
 

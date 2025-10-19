@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
     selector: 'app-exit-page',
     templateUrl: './exit-page.component.html',
-    styleUrls: ['./exit-page.component.css']
+    styleUrls: ['./exit-page.component.css'],
+    standalone: false
 })
 export class ExitPageComponent implements OnInit {
 
