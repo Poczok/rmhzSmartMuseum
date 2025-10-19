@@ -6,22 +6,38 @@
             <button id="close-button" type="button" (click)="goBack()"><img src="../../assets/img/close-icon.svg"></button>
         </div>
     </section>
-    <section id="playlist" *ngIf="view">
-        <div *ngFor="let item of newArray">
-            <div id="things-list-item">
-                <p>{{item}}. {{ 'DETAIL.ITEM' | translate }}</p>
-                <button class="main-play-button" (click)="play(item)" *ngIf="currentlyPlaying !== item">{{ 'AUDIO.PLAY' | translate }}</button>
-            </div>
-            <div id="audio-buttons" *ngIf="currentlyPlaying===item">
-                <button type="button" *ngIf="currentlyPlaying===item" (click)="resume()"><img src="../../assets/img/play-icon.svg" alt="Lejátszás ikon" [ngClass]="{'inactive': !audio.paused}"></button>
-                <button type="button" (click)="pause()" *ngIf="currentlyPlaying===item"><img src="../../assets/img/pause-icon.svg" alt="Szüneteltetés ikon" [ngClass]="{'inactive': audio.paused}"></button>
-                <button type="button" (click)="stop()" *ngIf="currentlyPlaying != 0 && currentlyPlaying===item"><img src="../../assets/img/stop-icon.svg" alt="Megállítás ikon"></button>
-            </div>
-        </div>
-    </section>
+    @if (view) {
+        <section id="playlist">
+            @for (item of newArray; track item) {
+                <div id="things-list-item">
+                    <p>{{item}}. {{ 'DETAIL.ITEM' | translate }}</p>
+                    @if (currentlyPlaying !== item) {
+                        <button class="main-play-button" (click)="play(item)">{{ 'AUDIO.PLAY' | translate }}</button>
+                    }
+                </div>
+                @if (currentlyPlaying===item) {
+                    <div id="audio-buttons">
+                        @if (currentlyPlaying===item) {
+                            <button type="button" (click)="resume()"><img src="../../assets/img/play-icon.svg" alt="Lejátszás ikon" [ngClass]="{'inactive': !audio.paused}"></button>
+                        }
+                        @if (currentlyPlaying===item) {
+                            <button type="button" (click)="pause()"><img src="../../assets/img/pause-icon.svg" alt="Szüneteltetés ikon" [ngClass]="{'inactive': audio.paused}"></button>
+                        }
+                        @if (currentlyPlaying != 0 && currentlyPlaying===item) {
+                            <button type="button" (click)="stop()"><img src="../../assets/img/stop-icon.svg" alt="Megállítás ikon"></button>
+                        }
+                    </div>
+                }
+            }
+        </section>
+    }
     <section id="next-room">
         <p>{{ 'DETAIL.STEPOVER' | translate }}</p>
-        <button id="next-room-button" type="button" (click)="navigateToNextRoom()" *ngIf="activeRoute < 14">{{ 'DETAIL.NEXT' | translate }}</button>
-        <button id="next-room-button" type="button" (click)="navigateToExitPage()" *ngIf="activeRoute == 14">{{ 'DETAIL.END' | translate }}</button>
+        @if (activeRoute < 14) {
+            <button id="next-room-button" type="button" (click)="navigateToNextRoom()">{{ 'DETAIL.NEXT' | translate }}</button>
+        }
+        @if (activeRoute == 14) {
+            <button id="next-room-button" type="button" (click)="navigateToExitPage()">{{ 'DETAIL.END' | translate }}</button>
+        }
     </section>
 </main>
